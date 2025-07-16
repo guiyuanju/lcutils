@@ -5,7 +5,7 @@ import (
 	"reflect"
 )
 
-func AssertEq(a, b any) {
+func Eq(a, b any) {
 	if reflect.DeepEqual(a, b) {
 		fmt.Printf("Ok: %v\n", a)
 	} else {
