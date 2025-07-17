@@ -21,6 +21,10 @@ func New(s string) [][]int {
 	var res [][]int
 	for _, p := range parts {
 		p = strings.Trim(p, "[]")
+		if len(p) == 0 {
+			res = append(res, []int{})
+			continue
+		}
 		ints := strings.Split(p, ",")
 		var cur []int
 		for _, i := range ints {
