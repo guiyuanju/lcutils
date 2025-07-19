@@ -16,10 +16,12 @@ func Print(g [][]int) {
 }
 
 func Ints(s string) [][]int {
-	s = s[1 : len(s)-1]
-	parts := strings.Split(s, "],[")
 	var res [][]int
-	for _, p := range parts {
+	s = s[1 : len(s)-1]
+	if len(s) == 0 {
+		return res
+	}
+	for p := range strings.SplitSeq(s, "],[") {
 		p = strings.Trim(p, "[]")
 		if len(p) == 0 {
 			res = append(res, []int{})
@@ -40,10 +42,12 @@ func Ints(s string) [][]int {
 }
 
 func Strings(s string) [][]string {
-	s = s[1 : len(s)-1]
-	parts := strings.Split(s, "],[")
 	var res [][]string
-	for _, p := range parts {
+	s = s[1 : len(s)-1]
+	if len(s) == 0 {
+		return res
+	}
+	for p := range strings.SplitSeq(s, "],[") {
 		p = strings.Trim(p, "[]")
 		if len(p) == 0 {
 			res = append(res, []string{})
@@ -60,10 +64,12 @@ func Strings(s string) [][]string {
 }
 
 func Bytes(s string) [][]byte {
-	s = s[1 : len(s)-1]
-	parts := strings.Split(s, "],[")
 	var res [][]byte
-	for _, p := range parts {
+	s = s[1 : len(s)-1]
+	if len(s) == 0 {
+		return res
+	}
+	for p := range strings.SplitSeq(s, "],[") {
 		p = strings.Trim(p, "[]")
 		if len(p) == 0 {
 			res = append(res, []byte{})
